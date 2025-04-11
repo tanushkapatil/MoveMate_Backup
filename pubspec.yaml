@@ -30,6 +30,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_maps_flutter: ^2.5.0
+  geolocator: ^11.0.0
+    
   flutter_localizations:
     sdk: flutter
 
