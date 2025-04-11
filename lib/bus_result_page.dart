@@ -65,21 +65,25 @@ class BusResultsPage extends StatelessWidget {
                     ),
                     trailing: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF7F56D9),
+                        backgroundColor: const Color(0xFF7F56D9),
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(14),
                         ),
                       ),
                       onPressed: () {
-                        showModalBottomSheet(
-                          context: context,
-                          backgroundColor: Colors.transparent,
-                          builder: (_) => _buildBusDetailCard(
-                              context, bus, source, destination),
+                       Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => BusMapScreen(
+                              bus: bus,
+                              source: source,
+                              destination: destination,
+                            ),
+                          ),
                         );
                       },
-                      child: Text('View'),
+                      child: const Text('View'),
                     ),
                   ),
                 );
